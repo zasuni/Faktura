@@ -47,8 +47,8 @@ public abstract class MySQLDaoBase<E extends EntityBase> extends DaoBase<E> {
 			
 			update = connection.prepareStatement(getUpdateQuery());
 			
-			delete = connection.prepareStatement(""
-					+ "delete from " +getTableName()+" where id =?");
+			delete = connection.prepareStatement("delete from " +getTableName()+" where id =?");
+			
 			selectId = connection.prepareStatement(" select * from "+getTableName()+" where id= ?");
 			
 			select = connection.prepareStatement("select * from "+ getTableName());
